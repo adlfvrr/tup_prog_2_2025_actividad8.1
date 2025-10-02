@@ -52,5 +52,26 @@ namespace ej
                 tbImporte.Text = cuentaSeleccionada.Importe.ToString();
             }
         }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+        
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFileDialog1.FileName;
+                FileStream fs = new FileStream(path,FileMode.Open,FileAccess.Read);
+                StreamReader sr = new StreamReader(fs);
+                while (sr.EndOfStream == false)
+                {
+                    string? cadena = sr.ReadLine();
+                    string dni = cadena.Substring(0, 9);
+                    string nombre = cadena.Substring(9,10).Trim();
+                    string importe = cadena.Substring(19,9);
+                    Cuenta c = new Cuenta(nombre, Convert.ToInt32(dni), Convert.ToDouble(importe));
+                }
+
+            }
+            
+        }
     }
 }

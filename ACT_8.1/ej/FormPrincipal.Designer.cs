@@ -37,6 +37,10 @@
             btnConfirmar = new Button();
             lsbActualizar = new ListBox();
             btnActualizar = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
+            btnImportar = new Button();
+            btnExportar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -109,7 +113,7 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(454, 244);
+            btnActualizar.Location = new Point(454, 166);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(164, 50);
             btnActualizar.TabIndex = 8;
@@ -117,11 +121,36 @@
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnImportar
+            // 
+            btnImportar.Location = new Point(454, 233);
+            btnImportar.Name = "btnImportar";
+            btnImportar.Size = new Size(164, 50);
+            btnImportar.TabIndex = 9;
+            btnImportar.Text = "Importar";
+            btnImportar.UseVisualStyleBackColor = true;
+            btnImportar.Click += btnImportar_Click;
+            // 
+            // btnExportar
+            // 
+            btnExportar.Location = new Point(454, 299);
+            btnExportar.Name = "btnExportar";
+            btnExportar.Size = new Size(164, 50);
+            btnExportar.TabIndex = 10;
+            btnExportar.Text = "Exportar";
+            btnExportar.UseVisualStyleBackColor = true;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(657, 392);
+            Controls.Add(btnExportar);
+            Controls.Add(btnImportar);
             Controls.Add(btnActualizar);
             Controls.Add(lsbActualizar);
             Controls.Add(btnConfirmar);
@@ -148,5 +177,9 @@
         private Button btnConfirmar;
         private ListBox lsbActualizar;
         private Button btnActualizar;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
+        private Button btnImportar;
+        private Button btnExportar;
     }
 }
